@@ -40,7 +40,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.VerticalSize = new System.Windows.Forms.NumericUpDown();
             this.HorizontSize = new System.Windows.Forms.NumericUpDown();
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             ((System.ComponentModel.ISupportInitialize)(this.NonogrammSolverSplit)).BeginInit();
             this.NonogrammSolverSplit.Panel1.SuspendLayout();
             this.NonogrammSolverSplit.Panel2.SuspendLayout();
@@ -84,7 +83,7 @@
             // 
             this.gridView.AllowUserToAddRows = false;
             this.gridView.AllowUserToDeleteRows = false;
-            this.gridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.gridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.gridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.gridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridView.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -95,10 +94,8 @@
             this.gridView.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.gridView.Size = new System.Drawing.Size(585, 516);
             this.gridView.TabIndex = 0;
-            this.gridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridView_CellValueChanged);
             this.gridView.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridView_ColumnHeaderMouseClick);
             this.gridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridView_RowHeaderMouseClick);
-            this.gridView.RowHeaderCellChanged += new System.Windows.Forms.DataGridViewRowEventHandler(this.gridView_RowHeaderCellChanged);
             // 
             // ControlsPanel
             // 
@@ -219,6 +216,8 @@
             this.Controls.Add(this.NonogrammSolverSplit);
             this.Name = "MainForm";
             this.Text = "NonogrammSolver";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
+            this.Shown += new System.EventHandler(this.MainForm_Shown);
             this.NonogrammSolverSplit.Panel1.ResumeLayout(false);
             this.NonogrammSolverSplit.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.NonogrammSolverSplit)).EndInit();
@@ -247,7 +246,6 @@
         private System.Windows.Forms.NumericUpDown HorizontSize;
         private System.Windows.Forms.TextBox DataTextBox;
         private System.Windows.Forms.Button SendValuesBttn;
-        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }
 
